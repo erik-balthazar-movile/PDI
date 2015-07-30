@@ -52,9 +52,11 @@
      <Compile Include="Assets\Scripts\Canvas3D\MainMenuManager.cs" />
      <Compile Include="Assets\Scripts\Canvas3D\ScaleFrom.cs" />
      <Compile Include="Assets\Scripts\Canvas3D\Typer.cs" />
+     <Compile Include="Assets\Scripts\CharacterController\BasicGun.cs" />
      <Compile Include="Assets\Scripts\CharacterController\CharacterShootController.cs" />
-     <Compile Include="Assets\Scripts\CharacterController\GunManager.cs" />
+     <Compile Include="Assets\Scripts\CharacterController\Pistol.cs" />
      <Compile Include="Assets\Scripts\CharacterController\ShootManager.cs" />
+     <Compile Include="Assets\Scripts\CharacterController\Weapon.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
