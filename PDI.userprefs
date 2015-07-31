@@ -1,13 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../playkids-unity/Assets/Editor/ResourceChecker.cs">
-    <Files>
-      <File FileName="../playkids-unity/Assets/Project/MiniGames/Animals/Scripts/RealAnimalCard.cs" Line="81" Column="90" />
-      <File FileName="../playkids-unity/Assets/Project/MiniGames/ColoringBook/Scripts/DrawPageLoader.cs" Line="29" Column="102" />
-      <File FileName="../playkids-unity/Assets/Project/MiniGames/Puzzles/Scripts/PuzzlesGameController.cs" Line="201" Column="79" />
-      <File FileName="../playkids-unity/Assets/Editor/ResourceChecker.cs" Line="169" Column="6" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
