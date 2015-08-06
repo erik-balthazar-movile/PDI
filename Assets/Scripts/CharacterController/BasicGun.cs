@@ -28,6 +28,10 @@ public abstract class BasicGun : MonoBehaviour {
 		return numberOfBullets > NoBullets;
 	}
 
+	public bool IsFullyCharged() {
+		return numberOfBullets == initialNumberOfBullets;
+	}
+
 	public void DecBulletCount() {
 		if (HasBullets()) {
 			numberOfBullets--;
@@ -40,8 +44,8 @@ public abstract class BasicGun : MonoBehaviour {
 				totalNumberOfBullets -= initialNumberOfBullets - numberOfBullets;
 				numberOfBullets = initialNumberOfBullets;
 			} else {
+				numberOfBullets += totalNumberOfBullets;
 				totalNumberOfBullets = NoBullets;
-				numberOfBullets = totalNumberOfBullets;
 			}
 			GetComponent<Animator>().SetTrigger(ReloadTrigger);
 		}

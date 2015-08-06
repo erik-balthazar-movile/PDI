@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class Typer : MonoBehaviour {
 
-	public float startDelay = 2f, typeDelay = 0.01f;
+	public float startDelay = 0f, typeDelay = 0.01f;
 	public string message;
+	public string Message { set { message = value; } get { return message; } }
 	private Text textComponent;
 
 	void Awake() {
@@ -21,7 +22,7 @@ public class Typer : MonoBehaviour {
 	private IEnumerator Type() {
 		yield return new WaitForSeconds(startDelay);
 
-		for (int i=0; i<message.Length; i++) {
+		for (int i=0; i<=message.Length; i++) {
 			textComponent.text = message.Substring(0, i);
 			yield return new WaitForSeconds(typeDelay);
 		}

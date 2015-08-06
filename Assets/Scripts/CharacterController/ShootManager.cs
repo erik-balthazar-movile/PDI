@@ -26,7 +26,13 @@ public class ShootManager : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.GetType() != typeof(ShootManager))
-			Destroy(gameObject);
+		if (other.GetComponent<ShootManager>() == null && other.GetComponent<CharacterShootController>() == null) {
+			if (other.GetComponent<Enemy>() != null && !other.isTrigger) {
+				Destroy(other.gameObject);
+				Destroy(gameObject);
+			} else if (other.GetComponent<SphereCollider>() == null){
+				Destroy(gameObject);
+			}		
+		}
 	}
 }
