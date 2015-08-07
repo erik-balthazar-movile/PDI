@@ -23,8 +23,8 @@ public class NPCTalksController : MonoBehaviour {
 
 		str = new List<string> ();
 		str.Add("Você é a nossa esperança?");
-		str.Add ("…");
-		str.Add ("Pois bem. Dê o seu melhor, soldado!");
+		str.Add("...");
+		str.Add("Bem... Dê o seu melhor!");
 		npcTalks.Add ("capsule", str); 
 	}
 	

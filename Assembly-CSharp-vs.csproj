@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Canvas3D\ScaleFrom.cs" />
      <Compile Include="Assets\Scripts\Canvas3D\Star.cs" />
      <Compile Include="Assets\Scripts\Canvas3D\Typer.cs" />
+     <Compile Include="Assets\Scripts\CharacterController\AlertEnemy.cs" />
      <Compile Include="Assets\Scripts\CharacterController\BasicGun.cs" />
      <Compile Include="Assets\Scripts\CharacterController\Blinker.cs" />
      <Compile Include="Assets\Scripts\CharacterController\CharacterShootController.cs" />

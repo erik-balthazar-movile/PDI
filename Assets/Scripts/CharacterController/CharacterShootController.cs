@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CharacterShootController : MonoBehaviour {
 	
 	public BasicGun[] guns;
 	public GameOverScreen gameOverScreenPrefab;
+	public Text frontMessage;
+	public Text backMessage;
 
 	private BasicGun activeGun;
 	private Interactive interactiveObject = null;
@@ -84,5 +87,21 @@ public class CharacterShootController : MonoBehaviour {
 
 	public bool IsGameOver() {
 		return gameOver;
+	}
+
+	public void ShowFrontMessage() {
+		frontMessage.transform.parent.gameObject.SetActive (true);
+	}
+
+	public void HideFrontMessage() {
+		frontMessage.transform.parent.gameObject.SetActive (false);
+	}
+
+	public void ShowBackMessage() {
+		backMessage.transform.parent.gameObject.SetActive (true);
+	}
+	
+	public void HideBackMessage() {
+		backMessage.transform.parent.gameObject.SetActive (false);
 	}
 }

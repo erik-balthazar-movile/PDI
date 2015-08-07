@@ -26,9 +26,22 @@ public class Enemy : MonoBehaviour {
 			aux.z = lerpAux.z;
 			transform.position = aux;
 
-			//transform.position = new Vector3(lerpAux.x,transform.position.y,lerpAux.z);
 			GetComponent<Rigidbody>().velocity = Vector3.zero;
 			GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+			Vector3 forward = actualTarget.transform.TransformDirection(Vector3.forward);
+			Vector3 toOther = transform.position - actualTarget.transform.position;
+			float dot = Vector3.Dot(forward, toOther);
+
+			if (dot < 0f) {
+				actualTarget.GetComponent<CharacterShootController>().ShowBackMessage();
+				actualTarget.GetComponent<CharacterShootController>().HideFrontMessage();
+				Debug.Log("ATRAS DE VOCE - "+dot);
+			} else if (dot > 0f) {
+				actualTarget.GetComponent<CharacterShootController>().ShowFrontMessage();
+				actualTarget.GetComponent<CharacterShootController>().HideBackMessage();
+				Debug.Log("NA SUA FRENTE - "+dot);
+			}
 		}
 	}
 	
@@ -37,7 +50,7 @@ public class Enemy : MonoBehaviour {
 		if (player != null) {
 			actualTarget = other.gameObject;
 			isSeeingPlayer = true;
-			Debug.Log("Viu o Player");
+			//Debug.Log("Viu o Player");
 		}
 	}
 	
@@ -46,7 +59,18 @@ public class Enemy : MonoBehaviour {
 		if (player != null) {
 			isSeeingPlayer = false;
 			actualTarget = null;
-			Debug.Log("Deixou de ver o Player");
+			Vector3 forward = other.transform.TransformDirection(Vector3.forward);
+			Vector3 toOther = transform.position - other.transform.position;
+			float dot = Vector3.Dot(forward, toOther);
+			
+			if (dot < 0f) {
+				other.gameObject.GetComponent<CharacterShootController>().HideBackMessage();
+				Debug.Log("ATRAS DE VOCE - "+dot);
+			} else if (dot > 0f) {
+				other.gameObject.GetComponent<CharacterShootController>().HideFrontMessage();
+				Debug.Log("NA SUA FRENTE - "+dot);
+			}
+			//Debug.Log("Deixou de ver o Player");
 		}
 	}
 
@@ -58,7 +82,6 @@ public class Enemy : MonoBehaviour {
 		CharacterShootController character = other.gameObject.GetComponent<CharacterShootController> ();
 		if (character != null) {
 			if (!character.IsGameOver()) {
-				Debug.Log("!!!!!!");
 				other.gameObject.GetComponent<CharacterShootController> ().GameOver();
 			}
 		}
